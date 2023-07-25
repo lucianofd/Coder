@@ -5,7 +5,7 @@ async function pruebaManager(){
 const manager = new ProductManager('Productos.json');
 
 // Crear un nuevo producto
-const nuevoProducto = [{
+const nuevoProducto =[{
   title: 'Producto 1',
   description: 'Descripción del producto 1',
   price: 9.99,
@@ -14,20 +14,23 @@ const nuevoProducto = [{
 },
 {
     title: 'Producto 2',
-    description: 'Descripción del producto 1',
-    price: 15,
-    thumbnail: 'imagen1.jpg',
+    description: 'Descripción del producto 2',
+    price: 18,
+    thumbnail: 'imagen2.jpg',
     stock: 10,
   },
   {
     title: 'Producto 3',
-    description: 'Descripción del producto 1',
-    price: 18,
-    thumbnail: 'imagen1.jpg',
+    description: 'Descripción del producto 3',
+    price: 22,
+    thumbnail: 'imagen3.jpg',
     stock: 10,
-  }];
+  },
+]
 
-manager.addProduct(nuevoProducto);
+nuevoProducto.forEach(async (producto) => {
+  await  manager.addProduct(producto);
+  });
 
 // Consultar productos 
 const productos =  await manager.getProducts();

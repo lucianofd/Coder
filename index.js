@@ -11,7 +11,7 @@ class ProductManager {
   async addProduct(product) {
     // Validar los campos requeridos
     if (!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock) {
-      console.log("Todos los campos son obligatorios");
+      console.log("Todos los campos son obligatorios 1");
       return;
     }
 
